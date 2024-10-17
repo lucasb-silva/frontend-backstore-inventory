@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Card from "./components/Product/Card";
+import Card from "./components/Card/Card";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import { Api } from "./api/api";
 
 function App() {
   const [inventory, setInventory] = useState([]);
 
   async function fetchData() {
-    const apiUrl = "http://localhost:5000/inventarioo/";
+    const apiUrl = Api.inventario.readAll()
 
-    const response = await fetch(apiUrl).catch(function (error) {
-      console.log('Erro ao carregar endpoint /personagem.', error)
-      toast.error('Erro ao carregar inventário.')
-    })
+    const response = await Api.buildApiGetRequest(apiUrl)
 
     if (response.ok){
       const data = await response.json();
@@ -30,8 +28,8 @@ function App() {
   return (
     <>
       <div className="inventory">
-        {inventory.map(function (product) {
-          return <Card key={product.name} item={product} />;
+        {inventory.map(function (produto) {
+          return <Card key={produto.nome} item={produto} />;
         })}
       </div>
       <ToastContainer />
