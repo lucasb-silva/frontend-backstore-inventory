@@ -1,32 +1,28 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/Product/Card";
 
-async function App() {
-  
-  const inventory = []
-  
+function App() {
+  const [inventory, setInventory] = useState([]);
+
   async function fetchData() {
-    const apiUrl = 'http://localhost:5000/inventario/'
+    const apiUrl = "http://localhost:5000/inventario/";
 
-    const response = await fetch(apiUrl)
+    const response = await fetch(apiUrl);
 
-    const data = await response.json()
+    const data = await response.json();
 
-    console.log(45, data)
+    setInventory(data)
   }
-
-  fetchData()
+  useEffect(function () {
+    fetchData();
+  }, []);
 
   return (
     <>
       <div className="inventory">
         {inventory.map(function (product) {
-          return (
-            <Card
-              key={product.name}
-              item={product}
-            />
-          );
+          return <Card key={product.name} item={product} />;
         })}
       </div>
     </>
