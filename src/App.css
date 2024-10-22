@@ -1,3 +1,6 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .inventory {
   display: flex;
   flex-wrap: wrap;
