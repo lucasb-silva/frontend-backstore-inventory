@@ -9,7 +9,7 @@ export default function Header() {
 
       <nav>
         <NavLink activeClassName="active" to="/">Home</NavLink>
-        <NavLink activeClassName="active" to="/teste">Teste</NavLink>
+        <NavLink activeClassName="active" to="/create">Create</NavLink>
       </nav>
     </header>
   )
