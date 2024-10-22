@@ -1,6 +1,6 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 200px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.15s ease-out;
@@ -12,7 +12,7 @@
   
   .quantidade {
     color: grey;
-    font-size: 22px;
+    font-size: 16px;
   }
   
   .card button {
@@ -24,9 +24,13 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 12px;
   }
   
   .card button:hover {
     opacity: 0.7;
+  }
+
+  .description {
+    font-size: 10px;
   }

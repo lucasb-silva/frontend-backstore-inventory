@@ -10,9 +10,9 @@ export default function Card(props) {
         alt={props.item.nome}
         width="100%"
       />
-      <h2>{props.item.name}</h2>
+      <h4>{props.item.nome}</h4>
       <p className="quantidade">{props.item.quantidade} itens</p>
-      <p>{props.item.descricao}...</p>
+      <p className="descricao">{props.item.descricao}...</p>
       <p>
         <button>Editar item</button>
       </p>
