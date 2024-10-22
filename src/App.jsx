@@ -1,40 +1,21 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import Card from "./components/Card/Card";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
-import { Api } from "./api/api";
+import './App.css'
+import Home from './pages/Home'
 
-function App() {
-  const [inventory, setInventory] = useState([]);
-
-  async function fetchData() {
-    const apiUrl = Api.inventario.readAll()
-
-    const response = await Api.buildApiGetRequest(apiUrl)
-
-    if (response.ok){
-      const data = await response.json();
-
-      setInventory(data)
-    } else {
-      toast.error('Erro ao carregar inventário.')
-    }
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
   }
-  useEffect(function () {
-    fetchData();
-  }, []);
+])
 
+export default function App() {
   return (
     <>
-      <div className="inventory">
-        {inventory.map(function (produto) {
-          return <Card key={produto.nome} item={produto} />;
-        })}
-      </div>
+      <RouterProvider router={router} />
       <ToastContainer />
     </>
-  );
+  )
 }
-
-export default App;
