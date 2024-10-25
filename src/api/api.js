@@ -3,9 +3,9 @@ import { toast } from 'react-toastify'
 export const Api = {
   baseUrl: 'http://localhost:5000',
 
-  inventario: {
+  produto: {
     endpoint: function () {
-      return Api.baseUrl + '/inventario'
+      return Api.baseUrl + '/produto'
     },
     readAll: function () {
       return this.endpoint() + '/'

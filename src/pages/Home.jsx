@@ -7,13 +7,13 @@ export default function Home() {
   const [inventory, setInventory] = useState([]);
 
   async function fetchData() {
-    const apiUrl = Api.inventario.readAll()
+    const apiUrl = Api.produto.readAll()
 
     const response = await Api.buildApiGetRequest(apiUrl)
 
     if (response.ok){
       const data = await response.json();
-
+      
       setInventory(data)
     } else {
       toast.error('Erro ao carregar inventário.')

@@ -1,5 +1,6 @@
 import { Navigate, useNavigate } from "react-router-dom"
 import { Api } from "../api/api"
+import { toast } from "react-toastify"
 
 export default function Create() {
   async function handleSubmit(event){
@@ -13,7 +14,11 @@ export default function Create() {
       descricao: event.target.descricao.value
     }
 
-    const apiUrl = Api.inventario.create()
+    console.log(produto)
+
+    const apiUrl = Api.produto.create()
+
+    console.log(apiUrl)
 
     const response = await Api.buildApiPostRequest(apiUrl, produto)
 
@@ -22,7 +27,7 @@ export default function Create() {
       navigate('/')
     } else {
       const body = await response.json()
-      toast.error('Erro ao criar novo produto' + body.error)
+      toast.error('Erro ao criar novo produto: ' + body.error)
     }
   }
 
