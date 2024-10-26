@@ -1,24 +1,22 @@
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { Api } from "../api/api"
 import { toast } from "react-toastify"
 
 export default function Create() {
+  const navigate = useNavigate()
+
   async function handleSubmit(event){
-    const navigate = useNavigate()
+    
     event.preventDefault()
 
     const produto = {
       nome: event.target.nome.value,
-      imagem: event.target.imagem.value,
+      imagem: event.target.imagem.value || undefined,
       quantidade: event.target.quantidade.value,
       descricao: event.target.descricao.value
     }
 
-    console.log(produto)
-
     const apiUrl = Api.produto.create()
-
-    console.log(apiUrl)
 
     const response = await Api.buildApiPostRequest(apiUrl, produto)
 
