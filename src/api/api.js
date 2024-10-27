@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify'
 
 export const Api = {
-  baseUrl: 'http://localhost:5000',
+  baseUrl: 'https://backend-backstore-inventory.onrender.com',
 
   produto: {
     endpoint: function () {
