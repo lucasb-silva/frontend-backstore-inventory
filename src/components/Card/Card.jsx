@@ -13,9 +13,7 @@ export default function Card(props) {
       <h4>{props.item.nome}</h4>
       <p className="quantidade">{props.item.quantidade} itens</p>
       <p className="descricao">{props.item.descricao}...</p>
-      <p>
-        <button>Editar item</button>
-      </p>
+      <button>Editar item</button>
     </div>
   );
 }

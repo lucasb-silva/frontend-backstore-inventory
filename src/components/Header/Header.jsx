@@ -8,8 +8,8 @@ export default function Header() {
       <img src={logo} alt="Logo" className="logo" />
 
       <nav>
-        <NavLink activeclassname="active" to="/">Home</NavLink>
-        <NavLink activeclassname="active" to="/create">Create</NavLink>
+        <NavLink activeclassname="active" to="/">Início</NavLink>
+        <NavLink activeclassname="active" to="/create">Novo Item</NavLink>
       </nav>
     </header>
   )
