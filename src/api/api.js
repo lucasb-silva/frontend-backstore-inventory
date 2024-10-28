@@ -1,8 +1,11 @@
+// Biblioteca de mensagens de erro estilizadas
 import { toast } from 'react-toastify'
 
+// Acessa API da aplicação e cria as requisições
 export const Api = {
   baseUrl: 'https://backend-backstore-inventory.onrender.com',
 
+  // Endpoint 'produto'
   produto: {
     endpoint: function () {
       return Api.baseUrl + '/produto'
@@ -15,12 +18,14 @@ export const Api = {
     }
   },
 
+  // Cria requisição 'GET'
   buildApiGetRequest: function (url) {
     return fetch(url, { method: 'GET' }).catch(function (error) {
       console.log('Erro ao carregar dados: ' + url, error)
       toast.error('Erro ao carregar dados.')
     })
   },
+  // Cria requisição 'POST'
   buildApiPostRequest: function (url, body) {
     return fetch(url, {
       method: 'POST',
