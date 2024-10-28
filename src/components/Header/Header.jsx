@@ -1,7 +1,7 @@
-import { Link, NavLink } from 'react-router-dom'
-import logo from '../../assets/BackStoreLogo.svg'
-import { IoHomeOutline, IoAdd } from "react-icons/io5";
-import './Header.css'
+import { IoAdd, IoHomeOutline } from "react-icons/io5";
+import { NavLink } from 'react-router-dom';
+import logo from '../../assets/BackStoreLogo.svg';
+import './Header.css';
 
 // Cabeçalho da página, contendo logo e opções "Início" e "Novo Item"
 export default function Header() {
